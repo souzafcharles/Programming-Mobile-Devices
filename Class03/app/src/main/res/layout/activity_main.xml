@@ -70,7 +70,7 @@
             android:visibility="gone"
             android:padding="5dp"
             android:layout_margin="5dp">
-
+            
             <EditText
                 android:id="@+id/nomeConjugeEt"
                 android:layout_width="match_parent"
@@ -115,7 +115,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/masculino" />
-
         </RadioGroup>
 
         <Button
