@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Views</string>
+    <string name="preencha_seus_dados">Preencha seus dados</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="email">E-mail</string>
+    <string name="feminino">Feminino</string>
+    <string name="masculino">Masculino</string>
+    <string name="salvar">Salvar</string>
+    <string name="limpar">Limpar</string>
+    <string name="nome_do_conjuge">Nome do cônjuge</string>
+    <string name="sobrenome_do_conjuge">Sobrenome do cônjuge</string>
+    <string-array name="estado_civil">
+        <item>Solteiro</item>
+        <item>Casado</item>
+        <item>Divorciado</item>
+        <item>Viúvo</item>
+    </string-array>
+</resources>
