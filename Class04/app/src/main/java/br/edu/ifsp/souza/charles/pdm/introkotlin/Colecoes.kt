@@ -17,6 +17,34 @@ fun main() {
     // for (i in 0..listaInteiros.size -  1){
     //    println(listaInteiros[i])
     //}
-    listaInteiros.forEach { print(it) }
+    //listaInteiros.forEach { print(it) }
     listaInteiros.forEachIndexed {indice, valor -> println("$indice - $valor")}
+
+    val listaCursos: MutableList<String> = mutableListOf(
+        "Analise e Desenvolvinto de Sistemas",
+        "Sistemas para Dispositivos Móveis",
+        "Informática para Internet"
+    )
+    listaCursos.add("Engenharia de Software")
+    listaCursos.add("Engenharia de Software")
+
+    listaCursos.forEach{println(it)}
+
+    //Set e MutableSet
+    val setCursos: MutableSet<String> = mutableSetOf("ADS", "SOM", "TII")
+    setCursos.add("BES")
+    setCursos.add("ADS")
+
+    setCursos.forEach { println(it)}
+
+    //Map e MutableMap
+    var familiaMap: MutableMap<String, String> = mutableMapOf(
+        Pair("Pai", "Charles"),
+        Pair("Filho", "Balthazar"),
+    )
+    //familiaMap.put("Pet", "Ophélia")
+    familiaMap["Pet"] = "Ophélia"
+
+    familiaMap.keys.forEach{ println("$it | ${familiaMap[it]}")}
+    //familiaMap.forEach{chave -> println("$chave - ${familiaMap[chave]}")}
 }
