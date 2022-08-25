@@ -22,9 +22,22 @@ fun main(){
     catch (npe: Exception){
         println(npe.stackTrace)
     }
-    
+
     if(sobrenome != null) {
         println(sobrenome?.count())
+    }
+
+    val numString: String = 10.toString()
+    val numDouble: Double = numString.toDouble()
+    val numFloat: Float = numDouble.toFloat()
+    val numInt: Int = numFloat.toInt()
+    println(numInt)
+
+    val any: Any = "Any equivale a Object em Java"
+    //val str: String? = any as? String
+
+    if (any is String){
+        println(any.count())
     }
 
 }
