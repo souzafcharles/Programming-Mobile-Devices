@@ -1,6 +1,6 @@
 
 
-fun <T, R> List<T>.paraCada(funcao: (T) -> R): List<R> {
+inline fun <T, R> List<T>.paraCada(funcao: (T) -> R): List<R> {
     var lista: MutableList<R> = mutableListOf()
 
     for (item in this) {
