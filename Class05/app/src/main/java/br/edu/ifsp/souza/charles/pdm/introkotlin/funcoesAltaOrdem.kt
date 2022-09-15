@@ -11,4 +11,5 @@ fun inverte(x: String, y: String) = "${y.reversed()}${x.reversed()}"
 fun main() {
     println(processaTexto("Olá, ", "Mundo", ::concatena))
     println(processaTexto("Olá, ", "Mundo", ::inverte))
+    println(processaTexto("Olá, ", "Mundo", {a: String, b: String -> "${a.uppercase()}${b.uppercase()}"}))
 }
