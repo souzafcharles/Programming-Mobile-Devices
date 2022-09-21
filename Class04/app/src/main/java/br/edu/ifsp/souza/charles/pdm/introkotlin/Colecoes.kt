@@ -34,7 +34,6 @@ fun main() {
     val setCursos: MutableSet<String> = mutableSetOf("ADS", "SOM", "TII")
     setCursos.add("BES")
     setCursos.add("ADS")
-
     setCursos.forEach { println(it)}
 
     //Map e MutableMap
