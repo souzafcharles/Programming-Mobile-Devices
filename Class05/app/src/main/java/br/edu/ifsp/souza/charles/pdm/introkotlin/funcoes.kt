@@ -5,12 +5,10 @@ fun multiplo(a: Int = 10, b: Int) = if (a % b == 0) true else false
 
 fun Int.multiploo(b: Int): Boolean{
     return multiplo(this, b)
-
 }
 
 infix fun Int.multiplooo(b: Int): Boolean{
     return multiplo(this, b)
-
 }
 
 fun main(){
