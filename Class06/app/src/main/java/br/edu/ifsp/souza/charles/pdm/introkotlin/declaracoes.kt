@@ -14,5 +14,4 @@ fun main(){
     println("${frase}")
     println("Quantidade de caracteres:  ${frase.count()}")
     println("Quantidade de caracteres:  ${frase.length}")
-
 }
