@@ -1,5 +1,6 @@
 package br.edu.ifsp.souza.charles.pdm.ciclopdm
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private companion object{
         const val TAG = "CICLO_PDM_TAG"
+        const val VALOR_ET_DINAMICO = "VALOR_ET_DINAMICO"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,4 +65,19 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.v(TAG, "onRestart: Finalizando ciclo COMPLETO")
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(VALOR_ET_DINAMICO, dinamicoEt.text.toString())
+        Log.v(TAG, "onSaveInstanceState: Salvando o ET dinamico")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val valorSalvo: String = savedInstanceState.getString(VALOR_ET_DINAMICO, "")
+        dinamicoEt.setText(valorSalvo)
+        Log.v(TAG, "onRestoreInstanceState: Restaurando o ET dinamico")
+    }
+
+
 }
