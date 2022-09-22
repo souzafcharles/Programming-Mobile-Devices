@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         dinamicoEt.hint = "EditText dinamico"
         amb.root.addView(dinamicoEt)
 
+        val valorSalvo: String = savedInstanceState?.getString(VALOR_ET_DINAMICO)?:""
+        dinamicoEt.setText(valorSalvo)
         Log.v(TAG, "onCreate: Iniciando ciclo COMPLETO")
     }
 
@@ -72,12 +74,12 @@ class MainActivity : AppCompatActivity() {
         Log.v(TAG, "onSaveInstanceState: Salvando o ET dinamico")
     }
 
+    /*
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         val valorSalvo: String = savedInstanceState.getString(VALOR_ET_DINAMICO, "")
         dinamicoEt.setText(valorSalvo)
         Log.v(TAG, "onRestoreInstanceState: Restaurando o ET dinamico")
     }
-
-
+    */
 }
