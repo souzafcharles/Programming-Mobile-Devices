@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         Log.v(TAG, "onResume: Iniciando ciclo FOREGROUND")
     }
+    
     override fun onRestart() {
         super.onRestart()
         Log.v(TAG, "onRestart: Preparando a execução do onStart")
