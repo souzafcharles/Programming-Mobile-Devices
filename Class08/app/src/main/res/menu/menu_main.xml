@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/viewMi"
-        android:icon="@drawable/ic_navegador"
+        android:icon="@drawable/ic_launcher_foreground"
         android:title="Abrir navegador"
         app:showAsAction="ifRoom"/>
     <item
@@ -17,11 +17,11 @@
                 android:id="@+id/dialMi"
                 android:title="Abrir discador" />
             <item
-                android:id="@+id/pickMi"
-                android:title="Pegar imagem" />
-            <item
                 android:id="@+id/chooserMi"
                 android:title="Selecionar app" />
+            <item
+                android:id="@+id/pickMi"
+                android:title="Pegar imagem" />
         </menu>
     </item>
 </menu>

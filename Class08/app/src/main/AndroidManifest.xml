@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,8 +17,9 @@
         <activity
             android:name=".UrlActivity"
             android:exported="true">
+
             <intent-filter>
-                <action android:name="SEGUNDA_TELA_DO_PROJETO_INTENTS" />
+                <action android:name="SEGUNDA_TELA_DO_PROJETO_INTENT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
