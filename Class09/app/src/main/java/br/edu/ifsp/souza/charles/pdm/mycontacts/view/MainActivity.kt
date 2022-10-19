@@ -1,8 +1,11 @@
-package br.edu.ifsp.souza.charles.pdm.mycontacts
+package br.edu.ifsp.souza.charles.pdm.mycontacts.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
+import br.edu.ifsp.souza.charles.pdm.mycontacts.R
 import br.edu.ifsp.souza.charles.pdm.mycontacts.databinding.ActivityMainBinding
 import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Contact
 
@@ -28,17 +31,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(amb.root)
 
         fillContactList()
+        amb.contactsLv.adapter = contactAdpater
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.addContactMi -> {
+                // Abre a tela de contato
+                true
+            }
+            else -> {false}
+        }
+    }
+
+
 
     private fun fillContactList(){
         for ( i in 1 .. 50) {
             contactList.add(
                 Contact(
-                    id = 1,
-                    name = "Nome $1",
-                    address = "Endereço $1",
-                    phone = "Telefone $1",
-                    email = "Email $1",
+                    id = i,
+                    name = "Nome $i",
+                    address = "Endereço $i",
+                    phone = "Telefone $i",
+                    email = "Email $i",
                 )
             )
         }
