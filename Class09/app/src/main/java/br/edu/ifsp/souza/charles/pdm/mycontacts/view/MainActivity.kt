@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import br.edu.ifsp.souza.charles.pdm.mycontacts.R
+import br.edu.ifsp.souza.charles.pdm.mycontacts.adapter.ContactAdapter
 import br.edu.ifsp.souza.charles.pdm.mycontacts.databinding.ActivityMainBinding
 import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Constant.EXTRA_CONTACT
 import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Contact
@@ -22,13 +22,8 @@ class MainActivity : AppCompatActivity() {
     private val contactList: MutableList<Contact> = mutableListOf()
 
     //Adaptar
-    private val contactAdpater: ArrayAdapter<String> by lazy {
-        ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            contactList.map{ it.toString()}
-        )
-    }
+    private val contactAdpater = ContactAdapter
+
 
     private lateinit var  carl: ActivityResultLauncher<Intent>
 
