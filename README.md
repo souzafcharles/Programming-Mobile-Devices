@@ -1,7 +1,7 @@
-![GitHub language count](https://img.shields.io/github/languages/count/jmmarao/ws-mobile-programming)
-![GitHub top language](https://img.shields.io/github/languages/top/jmmarao/ws-mobile-programming)
-![GitHub](https://img.shields.io/github/license/jmmarao/ws-mobile-programming)
-![GitHub last commit](https://img.shields.io/github/last-commit/jmmarao/ws-mobile-programming)
+![GitHub language count](https://img.shields.io/github/languages/count/souzafcharles/ws-mobile-programming)
+![GitHub top language](https://img.shields.io/github/languages/top/souzafcharlessouzafcharles/ws-mobile-programming)
+![GitHub](https://img.shields.io/github/license/souzafcharles/ws-mobile-programming)
+![GitHub last commit](https://img.shields.io/github/last-commit/souzafcharles/ws-mobile-programming)
 
 # :mortar_board: Mobile Programming
 
