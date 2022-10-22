@@ -153,8 +153,6 @@ class MainActivity : AppCompatActivity() {
         intent.data = uri
         startActivity(intent)
     }
-
-
     //OBS
     //Toast.makeTest("alerta").show()
 }
