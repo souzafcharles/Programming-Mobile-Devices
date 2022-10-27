@@ -15,6 +15,7 @@ import br.edu.ifsp.souza.charles.pdm.mycontacts.R
 import br.edu.ifsp.souza.charles.pdm.mycontacts.adapter.ContactAdapter
 import br.edu.ifsp.souza.charles.pdm.mycontacts.databinding.ActivityMainBinding
 import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Constant.EXTRA_CONTACT
+import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Constant.VIEW_CONTACT
 import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Contact
 
 class MainActivity : AppCompatActivity() {
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
                 val contact = contactList[position]
                 val contactIntent = Intent(this@MainActivity, ContactActivity::class.java)
                 contactIntent.putExtra(EXTRA_CONTACT, contact)
+                contactIntent.putExtra(VIEW_CONTACT, true)
                 startActivity(contactIntent)
             }
         }
@@ -100,6 +102,7 @@ class MainActivity : AppCompatActivity() {
                 val contact = contactList[position]
                 val contactIntent = Intent(this, ContactActivity::class.java)
                 contactIntent.putExtra(EXTRA_CONTACT, contact)
+                contactIntent.putExtra(VIEW_CONTACT, false)
                 carl.launch(contactIntent)
                 true
             }

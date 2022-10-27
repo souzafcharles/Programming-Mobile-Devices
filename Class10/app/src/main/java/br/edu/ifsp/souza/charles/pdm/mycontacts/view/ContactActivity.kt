@@ -3,8 +3,10 @@ package br.edu.ifsp.souza.charles.pdm.mycontacts.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import br.edu.ifsp.souza.charles.pdm.mycontacts.databinding.ActivityContactBinding
 import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Constant.EXTRA_CONTACT
+import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Constant.VIEW_CONTACT
 import br.edu.ifsp.souza.charles.pdm.mycontacts.model.Contact
 import kotlin.random.Random
 
@@ -28,7 +30,14 @@ class ContactActivity : AppCompatActivity() {
                 }
             }
         }
-
+        val viewContact = intent.getBooleanExtra(VIEW_CONTACT, false)
+        if (viewContact){
+            acb.nameEt.isEnabled = false
+            acb.addressEt.isEnabled = false
+            acb.phoneEt.isEnabled = false
+            acb.emailEt.isEnabled = false
+            acb.saveBt.visibility = View.GONE
+        }
         acb.saveBt.setOnClickListener{
             val contact = Contact (
                 id = receivedContact?.id?: Random(System.currentTimeMillis()).nextInt(),
