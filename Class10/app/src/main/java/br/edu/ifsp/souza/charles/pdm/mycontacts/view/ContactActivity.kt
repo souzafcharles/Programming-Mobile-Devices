@@ -31,7 +31,7 @@ class ContactActivity : AppCompatActivity() {
 
         acb.saveBt.setOnClickListener{
             val contact = Contact (
-                id = Random(System.currentTimeMillis()).nextInt(),
+                id = receivedContact?.id?: Random(System.currentTimeMillis()).nextInt(),
                 name = acb.nameEt.text.toString(),
                 address = acb.addressEt.text.toString(),
                 phone = acb.phoneEt.text.toString(),

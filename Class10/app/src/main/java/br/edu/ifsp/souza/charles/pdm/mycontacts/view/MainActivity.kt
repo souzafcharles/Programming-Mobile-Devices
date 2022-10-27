@@ -6,6 +6,7 @@ import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.AdapterView
 import android.widget.AdapterView.AdapterContextMenuInfo
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -43,12 +44,27 @@ class MainActivity : AppCompatActivity() {
             if (result.resultCode == RESULT_OK) {
                 val contact = result.data?.getParcelableExtra<Contact>(EXTRA_CONTACT)
                 contact?.let { _contact->
-                    contactList.add(_contact)
+                    if(contactList.any {it.id == _contact.id}){
+                        //Alterar na posição
+                        val position = contactList.indexOfFirst { it.id == _contact.id }
+                        contactList[position] = _contact
+                    }
+                    else{
+                        contactList.add(_contact)
+                    }
                     contactAdapter.notifyDataSetChanged()
                 }
             }
         }
         registerForContextMenu(amb.contactsLv)
+        amb.contactsLv.onItemClickListener = object: AdapterView.OnItemClickListener {
+            override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val contact = contactList[position]
+                val contactIntent = Intent(this@MainActivity, ContactActivity::class.java)
+                contactIntent.putExtra(EXTRA_CONTACT, contact)
+                startActivity(contactIntent)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -84,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                 val contact = contactList[position]
                 val contactIntent = Intent(this, ContactActivity::class.java)
                 contactIntent.putExtra(EXTRA_CONTACT, contact)
-                startActivity(contactIntent)
+                carl.launch(contactIntent)
                 true
             }
             else -> { false }
