@@ -5,14 +5,14 @@ import androidx.room.Room
 import br.edu.ifsp.ads.pdm.mycontacts.model.dao.ContactRoomDAO
 import br.edu.ifsp.ads.pdm.mycontacts.model.dao.ContactRoomDAO.Constant.CONTACT_DATABASE_FILE
 import br.edu.ifsp.ads.pdm.mycontacts.model.entity.Contact
-import br.edu.ifsp.ads.pdm.mycontacts.model.database.ContactRoomDaoDatabase
+import br.edu.ifsp.ads.pdm.mycontacts.model.database.ContactRoomDAODatabase
 import br.edu.ifsp.ads.pdm.mycontacts.view.MainActivity
 
 class ContactRoomController(private val mainActivity: MainActivity) {
     private val contactDaoImpl: ContactRoomDAO by lazy {
         Room.databaseBuilder(
             mainActivity,
-            ContactRoomDaoDatabase::class.java,
+            ContactRoomDAODatabase::class.java,
             CONTACT_DATABASE_FILE
         ).build().getContactRoomDao()
     }
