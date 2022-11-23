@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "758960871436",
+    "project_id": "mycontactsbackend-2f5a4",
+    "storage_bucket": "mycontactsbackend-2f5a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758960871436:android:418ea9a0793d937366f629",
+        "android_client_info": {
+          "package_name": "br.edu.ifsp.ads.pdm.mycontacts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758960871436-ugl33u4veofc1qbmi890fiuhk1kl5e2u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.ifsp.ads.pdm.mycontacts",
+            "certificate_hash": "bb81d90406ded0d08e4e747b86c81cf8ceed8cae"
+          }
+        },
+        {
+          "client_id": "758960871436-47gb5m6hd3p1g4amkroo9te1b5q3llub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaU-eqcQcWsESFPkdqVRh4F6-ZlxTudw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758960871436-47gb5m6hd3p1g4amkroo9te1b5q3llub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
