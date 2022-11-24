@@ -8,6 +8,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import kotlin.random.Random
 
 class ContactDAOFirebase: ContactDAO {
     private val CONTACT_DATABASE_ROOT_NODE = "contacts"
@@ -55,23 +56,34 @@ class ContactDAOFirebase: ContactDAO {
 
         })
     }
+    private fun generateId(): Int {
+        val random = Random(System.currentTimeMillis())
+        var id: Int
+        do{
+            id = random.nextInt()
+        }while (contactList.any { it.id == id })
+        return id
+    }
     override fun createContact(contact: Contact): Int {
-        TODO("Not yet implemented")
+        contact.id = generateId()
+        contactRealtimeDatabase.child(contact.id.toString()).setValue(contact)
+        return contact.id!!
     }
     override fun retrieveContact(id: Int): Contact? {
-        TODO("Not yet implemented")
+        val position = contactList.indexOfFirst { it.id == id }
+        return contactList[position]
     }
 
-    override fun retrieveContacts(): MutableList<Contact> {
-        TODO("Not yet implemented")
-    }
+    override fun retrieveContacts(): MutableList<Contact> = contactList
 
     override fun updateContact(contact: Contact): Int {
-        TODO("Not yet implemented")
+        contactRealtimeDatabase.child(contact.id.toString()).setValue(contact)
+        return 1
     }
 
     override fun deleteContact(id: Int): Int {
-        TODO("Not yet implemented")
+        contactRealtimeDatabase.child(id.toString()).removeValue()
+        return  1
     }
 }
 
