@@ -39,7 +39,6 @@ class ContactAdapter(
             nameTv.text = contact.name
             emailTv.text = contact.email
         }
-
         return contactTileView
     }
 }

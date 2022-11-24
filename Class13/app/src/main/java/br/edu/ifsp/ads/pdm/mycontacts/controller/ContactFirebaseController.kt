@@ -12,7 +12,7 @@ class ContactFirebaseController (private val mainActivity: MainActivity) {
     fun getContact(id: Int) = contactDaoImpl.retrieveContact(id)
     fun getContacts() = mainActivity.updateContactList(contactDaoImpl.retrieveContacts())
 
-    
+
     fun editContact(contact: Contact) = contactDaoImpl.updateContact(contact)
     fun removeContact(id: Int) = contactDaoImpl.deleteContact(id)
 }
